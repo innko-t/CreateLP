@@ -9,7 +9,8 @@ def create(db:Session, request: InfoBase):
         zipcode= request.zipcode,
         address= request.address,
         company_cp= request.company_cp,
-        company_description= request.company_description
+        company_description= request.company_description,
+        image_url = request.image_url
     )
     db.add(new_company)
     db.commit()
