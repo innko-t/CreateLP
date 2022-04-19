@@ -3,13 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers import company
 from db.database import engine
 from db import models
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 origins = [
     'http://localhost:3000'
 ]
 
-app. add_middleware(
+app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
@@ -19,3 +20,4 @@ app. add_middleware(
 
 app.include_router(company.router)
 models.Base.metadata.create_all(engine)
+app.mount('/images', StaticFiles(directory='images'), name='images')

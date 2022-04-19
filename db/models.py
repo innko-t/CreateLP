@@ -1,5 +1,5 @@
 from .database import Base
-from sqlalchemy import Column, DateTime, Integer, String
+from sqlalchemy import Column, Integer, String
 
 class DbCompany(Base):
     __tablename__ = 'company'
@@ -10,4 +10,4 @@ class DbCompany(Base):
     address = Column(String)
     company_cp = Column(String)
     company_description = Column(String)
-    
+    image_url = Column(String)

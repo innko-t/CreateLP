@@ -7,5 +7,6 @@ class InfoBase(BaseModel):
     address: str
     company_cp: str
     company_description: str
+    image_url:str
     class Config():
         orm_mode=True
